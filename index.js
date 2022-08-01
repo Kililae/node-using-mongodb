@@ -17,7 +17,5 @@ app.listen(PORT, () =>
     console.log(`Your server is running on port ${PORT}`)
 );
 
-mongoose.connect('mongodb://localhost:4000/productsdb', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect('mongodb://localhost/productsdb', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.Promise = global.Promise;
