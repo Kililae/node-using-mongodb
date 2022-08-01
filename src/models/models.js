@@ -15,4 +15,4 @@ const mySchema = new Schema({
     created_date: { type: Date, default: Date.now() }
 });
 
-const myModel = mongoose.model('Model', mySchema);
+export default mySchema;
