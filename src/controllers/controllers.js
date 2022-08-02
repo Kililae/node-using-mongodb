@@ -34,7 +34,7 @@ export const getProductWithID = (req, res) => {
 
 export const updateProduct = (req, res) => {
     Product.findOneAndUpdate({ _id: req.params.ProductID }, req.body, { new: true, useFindAndModify: false }, (err, Product)=>{
-        if (error) {
+        if (err) {
           res.send(err);
         }
   
@@ -45,10 +45,9 @@ export const updateProduct = (req, res) => {
 
 export const deleteProduct = (req, res) => {
     Product.deleteOne({ _id: req.params.ProductID }, (err, Product) => {
-      if (error) {
+      if (err) {
         res.send(err);
       }
-  
       res.json({ message: 'successfully deleted product' });
     });
   };
